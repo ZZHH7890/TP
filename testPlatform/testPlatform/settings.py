@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tpTest',
+    'tpTest.apps.TptestConfig',
 ]
 
 MIDDLEWARE = [
