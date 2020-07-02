@@ -1,0 +1,27 @@
+<!--
+ * @Author: joker.zhang
+ * @Date: 2020-07-01 16:29:29
+ * @LastEditors: joker.zhang
+ * @LastEditTime: 2020-07-02 11:49:07
+ * @Description: For Automation
+--> 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ test_case.TC_name}}</title>
+</head>
+<body>
+    <div>
+        <a href="{% url 'test_case_detail' test_case.pk %}">
+            <h3>用例详情</h3>
+        </a>
+    </div>
+    <h3>{{ test_case.TC_name }}</h3>
+    <p>用例前置：{{ test_case.TC_set_up}}</p>
+    <p>接口参数：{{ test_case.TC_params}}</p>
+    <p>检验：{{ test_case.TC_checks}}</p>
+    <p>下一步参数：{{ test_case.TC_next_step}}</p>
+    <p>用例版本：{{ test_case.TC_version}}</p>
+</body>
+</html>

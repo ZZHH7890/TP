@@ -1,8 +1,10 @@
+from django.urls import path, include
+from django.contrib import admin
 '''
 @Author: joker.zhang
 @Date: 2020-06-22 18:00:01
 @LastEditors: joker.zhang
-@LastEditTime: 2020-06-23 14:45:22
+@LastEditTime: 2020-07-02 11:27:46
 @Description: For Automation
 '''
 """testPlatform URL Configuration
@@ -20,10 +22,9 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path,include
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('tpTest.urls')),
+    path('testcase/', include('tpTest.urls')),
 ]

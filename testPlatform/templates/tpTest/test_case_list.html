@@ -1,0 +1,33 @@
+<!--
+ * @Author: joker.zhang
+ * @Date: 2020-07-01 11:45:37
+ * @LastEditors: joker.zhang
+ * @LastEditTime: 2020-07-02 11:39:17
+ * @Description: For Automation
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>自动化测试平台</title>
+</head>
+
+<body>
+    <div>
+        <a href="{% url 'test_case_list' %}">
+            <h2>自动化测试平台</h2>
+        </a>
+    </div>
+    <hr>
+    {# xxxx #}
+    {% for test_case in test_cases %}
+        <a href="{% url 'test_case_detail' test_case.pk %}">
+            <h3>{{ test_case.TC_name }}</h3>
+        </a>
+    {% endfor %}
+    <p>一共有{{ test_cases|length }}条用例</p>
+    <p>-- 看过书才能吹更好的牛 --</p>
+</body>
+
+</html>
