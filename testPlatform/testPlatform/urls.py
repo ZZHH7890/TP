@@ -1,10 +1,11 @@
 from django.urls import path, include
 from django.contrib import admin
+from . import views
 '''
 @Author: joker.zhang
 @Date: 2020-06-22 18:00:01
 @LastEditors: joker.zhang
-@LastEditTime: 2020-07-02 11:27:46
+@LastEditTime: 2020-07-02 19:00:21
 @Description: For Automation
 '''
 """testPlatform URL Configuration
@@ -25,6 +26,7 @@ Including another URLconf
 
 
 urlpatterns = [
+    path('home/', views.home, name='home'),
     path('admin/', admin.site.urls),
     path('testcase/', include('tpTest.urls')),
 ]

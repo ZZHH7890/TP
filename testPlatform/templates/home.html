@@ -1,0 +1,22 @@
+<!--
+ * @Author: joker.zhang
+ * @Date: 2020-07-02 17:24:45
+ * @LastEditors: joker.zhang
+ * @LastEditTime: 2020-07-02 19:02:35
+ * @Description: For Automation
+-->
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+我的网站|自动化测试平台
+{% endblock %}
+
+{% block header_extends %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock %}
+
+{% block content %}
+<h3 class="home-content"> {{welcome}}</h3>
+{% endblock %}
