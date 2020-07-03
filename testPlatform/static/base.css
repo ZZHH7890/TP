@@ -2,21 +2,14 @@
     margin: 0;
     padding: 0;
 }
-div.nav {
-    background-color: #eee;
-    border-bottom: 1px solid #ccc;
-    padding: 10px;
+
+body {
+    margin-top: 100px!important;
 }
-div.nav a{
-    text-decoration: none;
-    color: #000;
-    padding: 5px 10px;
-}
-div.nav a.logo {
-    display: inline-block;
-    font-size: 120%;
-}
+
 p.base-content {
-    display: inline-block;
-    font-size: 200%;
-}
+    font-size: 100%;
+    position: absolute;
+    left: 90%;
+    top: 70%;
+    }

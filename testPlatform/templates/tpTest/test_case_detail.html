@@ -2,7 +2,7 @@
  * @Author: joker.zhang
  * @Date: 2020-07-01 16:29:29
  * @LastEditors: joker.zhang
- * @LastEditTime: 2020-07-02 19:26:30
+ * @LastEditTime: 2020-07-03 15:25:41
  * @Description: For Automation
 -->
 {% extends 'base.html' %}
@@ -10,13 +10,27 @@
 {% block title %}
 详情|自动化测试平台
 {% endblock %}
+{% block nav_test_case_active %}active{% endblock %}
+
+{% load staticfiles %}
+{% block header_extends %}
+<link rel="stylesheet" href="{% static 'test_case.css' %}">
+{% endblock %}
 
 <!-- 页面内容 -->
 {% block content %}
-<p>{{ test_case.TC_name }}</p>
-<p>用例前置：{{ test_case.TC_set_up}}</p>
-<p>接口参数：{{ test_case.TC_params}}</p>
-<p>检验：{{ test_case.TC_checks}}</p>
-<p>下一步参数：{{ test_case.TC_next_step}}</p>
-<p>用例版本：{{ test_case.TC_version}}</p>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+            <h3>{{ test_case.TC_name }}</h3>
+            <ul class="test-case-info-description">
+                <li>用例前置：{{ test_case.TC_set_up}}</li>
+                <li>接口参数：{{ test_case.TC_params}}</li>
+                <li>检验：{{ test_case.TC_checks}}</li>
+                <li>下一步参数：{{ test_case.TC_next_step}}</li>
+                <li>用例版本：{{ test_case.TC_version}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
 {% endblock %}

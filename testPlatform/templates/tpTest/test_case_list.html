@@ -2,23 +2,42 @@
  * @Author: joker.zhang
  * @Date: 2020-07-01 11:45:37
  * @LastEditors: joker.zhang
- * @LastEditTime: 2020-07-02 19:25:40
+ * @LastEditTime: 2020-07-03 15:53:24
  * @Description: For Automation
 -->
 
 {% extends 'base.html' %}
-
 <!-- 页面标题 -->
 {% block title %}
 列表|自动化测试平台
 {% endblock %}
+{% block nav_test_case_active %}active{% endblock %}
+
+{% load staticfiles %}
+{% block header_extends %}
+<link rel="stylesheet" href="{% static 'test_case.css' %}">
+{% endblock %}
 
 <!-- 页面内容 -->
 {% block content %}
-{% for test_case in test_cases %}
-<a href="{% url 'test_case_detail' test_case.pk %}">
-    <h3>{{ test_case.TC_name|truncatechars:100 }}</h3>
-</a>
-{% endfor %}
-<p>一共有{{ test_cases|length }}条用例</p>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
+            <div class="panel panel-default">
+                <div class="panel-heading">用例列表（一共有{{ test_cases|length }}条用例）</div>
+                <div class="panel-body">
+                    {% for test_case in test_cases %}
+                    <div class="test-case">
+                        <h3><a href="{% url 'test_case_detail' test_case.pk %}">{{ test_case.TC_name }}</a></h3>
+                    </div>
+                    {% empty %}
+                    <div class="test-case">
+                        <h3>-- 暂无用例，请添加 --</h3>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
