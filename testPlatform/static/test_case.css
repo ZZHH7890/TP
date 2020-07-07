@@ -1,13 +1,10 @@
-ul.test-case-types {
-    list-style-type: none;
-}
 div.test-case:not(:last-child){
     margin-bottom: 2em;
     padding-bottom: 1em;
     border-bottom: 1px solid #eee;
 }
 div.test-case h3 {
-    margin-top: 1cm;
+    margin-top: 0.5em;
 }
 
 ul.test-case-info-description {
@@ -16,5 +13,5 @@ ul.test-case-info-description {
 }
 ul.test-case-info-description li{
     display: inline-block;
-    margin-right: 2em;
+    margin-right: 1em;
 }
