@@ -1,0 +1,103 @@
+<!--
+ * @Author: joker.zhang
+ * @Date: 2020-07-07 18:02:52
+ * @LastEditors: joker.zhang
+ * @LastEditTime: 2020-07-09 17:15:57
+ * @Description: For Automation
+-->
+<fieldset class="module aligned ">
+    <div class="form-row field-TC_name">
+        <div>
+            <label class="required" for="id_TC_name">用例概述:</label>
+            <input type="text" name="TC_name" class="vTextField" maxlength="500" required="" id="id_TC_name">
+        </div>
+    </div>
+    <div class="form-row field-TC_set_up">
+        <div>
+            <label class="required" for="id_TC_set_up">用例前置:</label>
+            <textarea name="TC_set_up" cols="40" rows="10" class="vLargeTextField" required=""
+                id="id_TC_set_up"></textarea>
+        </div>
+    </div>
+    <div class="form-row field-TC_params">
+        <div>
+            <label class="required" for="id_TC_params">接口参数:</label>
+            <textarea name="TC_params" cols="40" rows="10" class="vLargeTextField" required=""
+                id="id_TC_params"></textarea>
+        </div>
+    </div>
+    <div class="form-row field-TC_checks">
+        <div>
+            <label class="required" for="id_TC_checks">检验:</label>
+            <textarea name="TC_checks" cols="40" rows="10" class="vLargeTextField" required=""
+                id="id_TC_checks"></textarea>
+        </div>
+    </div>
+    <div class="form-row field-TC_next_step">
+        <div>
+            <label for="id_TC_next_step">下一步参数:</label>
+            <input type="text" name="TC_next_step" value="无" class="vTextField" maxlength="200" id="id_TC_next_step">
+        </div>
+    </div>
+    <div class="form-row field-TC_project">
+        <div>
+            <label for="id_TC_project">项目:</label>
+            <input type="text" name="TC_project" value="Seller" class="vTextField" maxlength="50" id="id_TC_project">
+        </div>
+    </div>
+    <div class="form-row field-TC_version">
+        <div>
+            <label for="id_TC_version">用例版本:</label>
+            <input type="text" name="TC_version" class="vTextField" maxlength="100" id="id_TC_version">
+        </div>
+    </div>
+    <div class="form-row field-owner">
+        <div>
+            <label class="required" for="id_owner">维护人员:</label>
+            <div class="related-widget-wrapper">
+                <select name="owner" required="" id="id_owner">
+                    <option value="" selected="">---------</option>
+                    <option value="1">joker</option>
+                    <option value="2">yandy</option>
+                </select>
+                <a class="related-widget-wrapper-link change-related" id="change_id_owner"
+                    data-href-template="/admin/auth/user/__fk__/change/?_to_field=id&amp;_popup=1" title="更改选中的用户"><img
+                        src="./增加 用例概述 _ Django 站点管理员_files/icon-changelink.svg" alt="修改"></a><a
+                    class="related-widget-wrapper-link add-related" id="add_id_owner"
+                    href="http://localhost:8000/admin/auth/user/add/?_to_field=id&amp;_popup=1" title="增加另一个 用户"><img
+                        src="./增加 用例概述 _ Django 站点管理员_files/icon-addlink.svg" alt="增加"></a><a
+                    class="related-widget-wrapper-link delete-related" id="delete_id_owner"
+                    data-href-template="/admin/auth/user/__fk__/delete/?_to_field=id&amp;_popup=1" title="取消选中 用户"><img
+                        src="./增加 用例概述 _ Django 站点管理员_files/icon-deletelink.svg" alt="删除"></a>
+            </div>
+        </div>
+    </div>
+    <div class="form-row field-created_time">
+        <div>
+            <label class="required" for="id_created_time_0">创建时间:</label>
+            <p class="datetime">
+                日期： <input type="text" name="created_time_0" value="2020/07/08" class="vDateField" size="10" required=""
+                    id="id_created_time_0"><span class="datetimeshortcuts">&nbsp;
+                    <a href="#",id="calendarlink0"><button type="button"
+                        class="btn btn-primary">添加用例</button></a>
+
+                <br>
+                时间： <input type="text" name="created_time_1" value="11:53" class="vTimeField" size="8" required=""
+                    id="id_created_time_1"><span class="datetimeshortcuts">&nbsp;<a
+                        href="http://localhost:8000/admin/tpTest/testcases/add/?_changelist_filters=o%3D-2#">现在</a>&nbsp;|&nbsp;<a
+                        href="http://localhost:8000/admin/tpTest/testcases/add/?_changelist_filters=o%3D-2#"
+                        id="clocklink0"><span class="clock-icon" title="选择一个时间"></span></a></span>
+
+            </p><input type="hidden" name="initial-created_time_0" value="2020/07/08"
+                id="initial-id_created_time_0"><input type="hidden" name="initial-created_time_1" value="11:53"
+                id="initial-id_created_time_1">
+        </div>
+    </div>
+    <div class="form-row field-TC_remark">
+        <div>
+            <label class="required" for="id_TC_remark">备注:</label>
+            <textarea name="TC_remark" cols="40" rows="10" class="vLargeTextField" required=""
+                id="id_TC_remark">无</textarea>
+        </div>
+    </div>
+</fieldset>

@@ -2,7 +2,7 @@
  * @Author: joker.zhang
  * @Date: 2020-07-02 15:26:37
  * @LastEditors: joker.zhang
- * @LastEditTime: 2020-07-07 11:36:32
+ * @LastEditTime: 2020-07-09 14:04:32
  * @Description: For Automation
 -->
 {% load staticfiles %}
@@ -23,22 +23,22 @@
 </head>
 
 <body>
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container-fluid">
-            <div id="navbar-collapse" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="{% block nav_home_active %}{% endblock %}">
-                        <a href="{% url 'home' %}">
-                            首页
-                        </a>
-                    </li>
-                    <li class="{% block nav_test_case_active %}{% endblock %}">
-                        <a href="{% url 'test_case_list' %}">
-                            列表
-                        </a>
-                    </li>
-                </ul>
-            </div>
+    <div class="row clearfix">
+        <div class="col-md-2 column">
+        </div>
+        <div class="col-md-6 column">
+            <ul class="nav nav-pills">
+                <li class="active">
+                    <a href="{% url 'home' %}">首页</a>
+                </li>
+                <li>
+                    <a href="{% url 'test_case_list' %}">列表</a>
+                </li>
+                <li class="disabled">
+                    <a href="#">报告</a>
+                </li>
+            </ul>
+        <div class="col-md-4 column">
         </div>
     </div>
 

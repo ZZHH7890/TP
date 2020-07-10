@@ -1,0 +1,83 @@
+<!--
+ * @Author: joker.zhang
+ * @Date: 2020-07-08 11:47:40
+ * @LastEditors: joker.zhang
+ * @LastEditTime: 2020-07-10 17:31:25
+ * @Description: For Automation
+-->
+{% extends 'base.html' %}
+<!-- 页面标题 -->
+{% block title %}
+添加用例|自动化测试平台
+{% endblock %}
+{% block nav_test_case_active %}active{% endblock %}
+
+{% load staticfiles %}
+{% block header_extends %}
+<link rel="stylesheet" href="{% static 'test_case.css' %}">
+{% endblock %}
+
+<!-- 页面内容 -->
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
+            <div class="panel panel-default">
+                <div class="panel-heading">添加用例</div>
+                <form role="form" action="add_test_case" method="POST">
+                    <div class="form-group">
+                        <div>
+                            <label for="TC_name">用例概述:</label>
+                            <input type="text" class="form-control" maxlength="500" id="id_TC_name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <label for="TC_params">接口参数:</label>
+                            <textarea cols="40" rows="10" class="form-control" id="TC_params"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <label for="TC_checks">检验:</label>
+                            <textarea cols="40" rows="10" class="form-control" id="TC_checks"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <label for="TC_next_step">下一步参数:</label>
+                            <input type="text" value="无" class="form-control" maxlength="200" id="TC_next_step">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <label for="TC_project">项目:</label>
+                            <input type="text" value="无" class="form-control" maxlength="50" id="TC_project">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <label for="owner">维护人员:</label>
+                            <div>
+                                <select name="owner" id="owner">
+                                    <option value="" selected="">---------</option>
+                                    <option value="1">joker</option>
+                                    <option value="2">yandy</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <label for="TC_remark">备注:</label>
+                                <textarea cols="40" rows="10" class="form-control" id="TC_remark"></textarea>
+                            </div>
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+                        <button class="btn-block btn-success btn-lg text-center" onclick="history.back()">返回</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -15,3 +15,21 @@ ul.test-case-info-description li{
     display: inline-block;
     margin-right: 1em;
 }
+ 
+ul.add-case-btn {
+    font-size: 2em;
+    font-weight: bold;
+    padding-left: 0;
+    float: right;
+    position: relative;
+    margin-top: -48px;
+}
+.submit-row {
+    padding: 12px 14px;
+    margin: 0 0 20px;
+    background: #f8f8f8;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    text-align: right;
+    overflow: hidden;
+}

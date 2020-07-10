@@ -2,7 +2,7 @@
  * @Author: joker.zhang
  * @Date: 2020-07-01 11:45:37
  * @LastEditors: joker.zhang
- * @LastEditTime: 2020-07-07 10:24:50
+ * @LastEditTime: 2020-07-10 17:56:57
  * @Description: For Automation
 -->
 
@@ -24,17 +24,68 @@
     <div class="row">
         <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
             <div class="panel panel-default">
-                <div class="panel-heading">用例列表（此页有{{ page_of_test_cases|length }}条用例）</div>
+                <div class="panel-heading">
+                    <a href="{% url 'add_test_case_form' %}"><button type="button"
+                            class="btn btn-primary">添加用例</button></a>
+                </div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                编号
+                            </th>
+                            <th>
+                                用例名称
+                            </th>
+                            <th>
+                                用例前置
+                            </th>
+                            <th>
+                                接口参数
+                            </th>
+                            <th>
+                                检验
+                            </th>
+                            <th>
+                                用例版本
+                            </th>
+                            <th>
+                                维护人员
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for test_case in page_of_test_cases %}
+                        <tr>
+                            <td>
+                                {{test_case.pk}}
+                            </td>
+                            <td>
+                                <a href="{% url 'test_case_detail' test_case.pk %}">{{ test_case.TC_name }}</a> </td>
+                            <td>
+                                {{test_case.TC_set_up}}
+                            </td>
+                            <td>
+                                {{test_case.TC_params}}
+                            </td>
+                            <td>
+                                {{test_case.TC_checks}}
+                            </td>
+                            <td>
+                                {{test_case.TC_version}}
+                            </td>
+                            <td>
+                                {{test_case.owner}}
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <div class="test-case">
+                            <h3>-- 暂无用例，请添加 --</h3>
+                        </div>
+                        {% endfor %}
+                    </tbody>
+                </table>
                 <div class="panel-body">
-                    {% for test_case in page_of_test_cases %}
-                    <div class="test-case">
-                        <h3><a href="{% url 'test_case_detail' test_case.pk %}">{{ test_case.TC_name }}</a></h3>
-                    </div>
-                    {% empty %}
-                    <div class="test-case">
-                        <h3>-- 暂无用例，请添加 --</h3>
-                    </div>
-                    {% endfor %}
                 </div>
                 <div class="panel-heading">用例列表（此页有{{ page_of_test_cases|length }}条用例）</div>
             </div>
