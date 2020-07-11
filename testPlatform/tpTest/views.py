@@ -2,7 +2,7 @@
 @Author: joker.zhang
 @Date: 2020-06-23 10:50:40
 @LastEditors: joker.zhang
-@LastEditTime: 2020-07-10 18:09:47
+@LastEditTime: 2020-07-11 17:41:56
 @Description: For Automation
 '''
 from django.shortcuts import render, get_object_or_404
@@ -15,13 +15,11 @@ def add_test_case_form(request):
     context = {}
     return render(request, 'tpTest/add_test_case_form.html', context)
 
-def add_test_case(request):
-    if request.method == "Post":
-        
-        
+# def add_test_case(request):
+#     if request.method == "Post":
     
-    context = {}
-    return render(request, 'tpTest/test_case_list.html', context)
+#     context = {}
+    # return render(request, 'tpTest/test_case_list.html', context)
 
 def test_case_list(request):
     test_case_all_list = TestCases.objects.all()

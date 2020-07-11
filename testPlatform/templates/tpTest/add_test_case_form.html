@@ -2,7 +2,7 @@
  * @Author: joker.zhang
  * @Date: 2020-07-08 11:47:40
  * @LastEditors: joker.zhang
- * @LastEditTime: 2020-07-10 17:31:25
+ * @LastEditTime: 2020-07-11 18:38:34
  * @Description: For Automation
 -->
 {% extends 'base.html' %}
@@ -28,39 +28,51 @@
                 <form role="form" action="add_test_case" method="POST">
                     <div class="form-group">
                         <div>
-                            <label for="TC_name">用例概述:</label>
-                            <input type="text" class="form-control" maxlength="500" id="id_TC_name">
+                            <label>用例概述:</label>
+                            <input type="text" class="form-control" maxlength="500" name="TC_name">
                         </div>
                     </div>
                     <div class="form-group">
                         <div>
-                            <label for="TC_params">接口参数:</label>
-                            <textarea cols="40" rows="10" class="form-control" id="TC_params"></textarea>
+                            <label>用例前置:</label>
+                            <textarea cols="40" rows="10" class="form-control" name="TC_set_up"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <div>
-                            <label for="TC_checks">检验:</label>
-                            <textarea cols="40" rows="10" class="form-control" id="TC_checks"></textarea>
+                            <label>接口参数:</label>
+                            <textarea cols="40" rows="10" class="form-control" name="TC_params"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <div>
-                            <label for="TC_next_step">下一步参数:</label>
-                            <input type="text" value="无" class="form-control" maxlength="200" id="TC_next_step">
+                            <label>检验:</label>
+                            <textarea cols="40" rows="10" class="form-control" name="TC_checks"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <div>
-                            <label for="TC_project">项目:</label>
-                            <input type="text" value="无" class="form-control" maxlength="50" id="TC_project">
+                            <label>下一步参数:</label>
+                            <input type="text" value="无" class="form-control" maxlength="200" name="TC_next_step">
                         </div>
                     </div>
                     <div class="form-group">
                         <div>
-                            <label for="owner">维护人员:</label>
+                            <label>项目:</label>
+                            <input type="text" value="无" class="form-control" maxlength="50" name="TC_project">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <label>用例版本:</label>
+                            <input type="text" value="无" class="form-control" maxlength="50" name="TC_version">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <label>维护人员:</label>
                             <div>
-                                <select name="owner" id="owner">
+                                <select name="owner" name="owner">
                                     <option value="" selected="">---------</option>
                                     <option value="1">joker</option>
                                     <option value="2">yandy</option>
@@ -69,8 +81,8 @@
                         </div>
                         <div class="form-group">
                             <div>
-                                <label for="TC_remark">备注:</label>
-                                <textarea cols="40" rows="10" class="form-control" id="TC_remark"></textarea>
+                                <label>备注:</label>
+                                <textarea cols="40" rows="10" class="form-control" name="TCremark"></textarea>
                             </div>
                         </div>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
