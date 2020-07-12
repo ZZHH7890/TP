@@ -2,7 +2,7 @@
  * @Author: joker.zhang
  * @Date: 2020-07-01 11:45:37
  * @LastEditors: joker.zhang
- * @LastEditTime: 2020-07-10 17:56:57
+ * @LastEditTime: 2020-07-12 23:11:58
  * @Description: For Automation
 -->
 
@@ -20,17 +20,37 @@
 
 <!-- 页面内容 -->
 {% block content %}
+<script type="text/javascript">
+    function seltAll() {
+        var chckBoxSign = document.getElementById("selectAll");       //全选/反选的选择框id
+        var chckBox = document.getElementsByName("check_box");    //单选框check_box
+        var num = chckBox.length;
+        if (chckBoxSign.checked) {
+            for (var index = 0; index < num; index++) {
+                chckBox[index].checked = true;
+            }
+        } else {
+            for (var index = 0; index < num; index++) {
+                chckBox[index].checked = false;
+            }
+        }
+    }
+
+
+
+</script>
+
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <a href="{% url 'add_test_case_form' %}"><button type="button"
-                            class="btn btn-primary">添加用例</button></a>
+                    <a href="{% url 'add_form' %}"><button type="button" class="btn btn-primary">添加用例</button></a>
                 </div>
-                <table class="table table-hover">
+                <table class="table table-bordered">
                     <thead>
                         <tr>
+                            <th><input type="checkbox" id="selectAll" onclick="seltAll()">全选</th>
                             <th>
                                 编号
                             </th>
@@ -52,11 +72,15 @@
                             <th>
                                 维护人员
                             </th>
+                            <th>
+                                操作
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for test_case in page_of_test_cases %}
                         <tr>
+                            <td><input type="checkbox" value="{{test_case.pk}}" name="check_box"></td>
                             <td>
                                 {{test_case.pk}}
                             </td>
@@ -76,6 +100,14 @@
                             </td>
                             <td>
                                 {{test_case.owner}}
+                            </td>
+                            <td>
+                                <strong><a href="#">修改</a></strong>
+                                <form role="form" action="delete_action/" method="POST">
+                                    <input type="hidden" name="test_case_id" value="{{test_case.pk}}">
+                                    <button class="btn btn-lg btn-primary btn-block" type="submit">删除</button>
+                                    {% csrf_token %}
+                                </form>
                             </td>
                         </tr>
                         {% empty %}

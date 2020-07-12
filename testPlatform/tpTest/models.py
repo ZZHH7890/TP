@@ -2,12 +2,11 @@
 @Author: joker.zhang
 @Date: 2020-06-23 10:50:40
 @LastEditors: joker.zhang
-@LastEditTime: 2020-07-10 18:20:33
+@LastEditTime: 2020-07-12 00:37:48
 @Description: For Automation
 '''
 from django.db import models
 from django.contrib.auth.models import User
-from django.utils import timezone
 
 # Create your models here.
 
@@ -26,7 +25,7 @@ class TestCases(models.Model):
     owner = models.ForeignKey(
         User, on_delete=models.DO_NOTHING, verbose_name='维护人员')
     created_time = models.DateTimeField(
-        default=timezone.now, verbose_name='创建时间')
+        auto_now_add=True, verbose_name='创建时间')
     last_updated_time = models.DateTimeField(
         auto_now=True, verbose_name='最后修改时间')
     TC_remark = models.TextField(verbose_name='备注', default='无')

@@ -2,7 +2,7 @@
  * @Author: joker.zhang
  * @Date: 2020-07-01 16:29:29
  * @LastEditors: joker.zhang
- * @LastEditTime: 2020-07-07 17:37:56
+ * @LastEditTime: 2020-07-12 17:19:00
  * @Description: For Automation
 -->
 {% extends 'base.html' %}
@@ -22,6 +22,9 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-10 col-xs-offset-1">
+            <div class="panel-heading">
+                <a href="{% url 'add_form' %}"><button type="button" class="btn btn-primary">添加用例</button></a>
+            </div>
             <h3>{{ test_case.TC_name }}</h3>
             <ul class="test-case-info-description">
                 <li>用例前置：{{ test_case.TC_set_up}}</li>

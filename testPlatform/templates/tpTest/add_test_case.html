@@ -2,7 +2,7 @@
  * @Author: joker.zhang
  * @Date: 2020-07-08 11:47:40
  * @LastEditors: joker.zhang
- * @LastEditTime: 2020-07-11 18:38:34
+ * @LastEditTime: 2020-07-12 13:13:20
  * @Description: For Automation
 -->
 {% extends 'base.html' %}
@@ -25,7 +25,7 @@
         <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
             <div class="panel panel-default">
                 <div class="panel-heading">添加用例</div>
-                <form role="form" action="add_test_case" method="POST">
+                <form role="form" action="add_action/" method="POST">
                     <div class="form-group">
                         <div>
                             <label>用例概述:</label>
@@ -82,11 +82,12 @@
                         <div class="form-group">
                             <div>
                                 <label>备注:</label>
-                                <textarea cols="40" rows="10" class="form-control" name="TCremark"></textarea>
+                                <textarea cols="40" rows="10" class="form-control" name="TC_remark"></textarea>
                             </div>
                         </div>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
                         <button class="btn-block btn-success btn-lg text-center" onclick="history.back()">返回</button>
+                        {% csrf_token %} 
                 </form>
             </div>
         </div>

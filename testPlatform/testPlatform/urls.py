@@ -5,7 +5,7 @@ from . import views
 @Author: joker.zhang
 @Date: 2020-06-22 18:00:01
 @LastEditors: joker.zhang
-@LastEditTime: 2020-07-02 19:00:21
+@LastEditTime: 2020-07-12 01:42:26
 @Description: For Automation
 '''
 """testPlatform URL Configuration
