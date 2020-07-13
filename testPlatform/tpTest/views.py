@@ -2,7 +2,7 @@
 @Author: joker.zhang
 @Date: 2020-06-23 10:50:40
 @LastEditors: joker.zhang
-@LastEditTime: 2020-07-13 19:56:04
+@LastEditTime: 2020-07-13 22:31:05
 @Description: For Automation
 '''
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, redirect
@@ -37,15 +37,7 @@ def delete_action(request):
     if request.method == "POST":
         test_case_pk = request.POST["test_case_id"]
         TestCases.objects.filter(id=test_case_pk).delete()
-
-    test_case_all_list = TestCases.objects.all()
-    paginator = Paginator(test_case_all_list, 5)
-    page_num = request.GET.get('page', 1)
-    page_of_test_cases = paginator.get_page(page_num)
-    context = {}
-    context['page_of_test_cases'] = page_of_test_cases
-    return render(request, 'tpTest/test_case_list.html', context)
-
+    return redirect('test_case_list')
 
 def update_form(request):
     if request.method == "POST":
@@ -70,13 +62,7 @@ def update_action(request):
         re = request.POST["TC_remark"]
         TestCases.objects.filter(id=test_case_pk).update(TC_name=name, TC_set_up=su, TC_params=pa, TC_checks=cer,
                                                          TC_next_step=ns, TC_project=pro, TC_version=ver, owner=oer, TC_remark=re)
-        test_case_all_list = TestCases.objects.all()
-        paginator = Paginator(test_case_all_list, 5)
-        page_num = request.GET.get('page', 1)
-        page_of_test_cases = paginator.get_page(page_num)
-        context = {}
-        context['page_of_test_cases'] = page_of_test_cases
-        return render(request, 'tpTest/test_case_list.html', context)
+        return redirect('test_case_detail', test_case_pk=test_case_pk)
 
 
 def test_case_list(request):
