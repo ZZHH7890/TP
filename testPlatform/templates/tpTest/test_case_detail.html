@@ -2,7 +2,7 @@
  * @Author: joker.zhang
  * @Date: 2020-07-01 16:29:29
  * @LastEditors: joker.zhang
- * @LastEditTime: 2020-07-12 17:19:00
+ * @LastEditTime: 2020-07-13 11:26:27
  * @Description: For Automation
 -->
 {% extends 'base.html' %}
@@ -31,6 +31,7 @@
                 <li>接口参数：{{ test_case.TC_params}}</li>
                 <li>检验：{{ test_case.TC_checks}}</li>
                 <li>下一步参数：{{ test_case.TC_next_step}}</li>
+                <li>项目：{{ test_case.TC_project}}</li>
                 <li>用例版本：{{ test_case.TC_version}}</li>
                 <li>维护人员：{{ test_case.owner}}</li>
                 <li>创建时间：{{ test_case.created_time}}</li>

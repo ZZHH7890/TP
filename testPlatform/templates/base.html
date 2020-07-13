@@ -2,7 +2,7 @@
  * @Author: joker.zhang
  * @Date: 2020-07-02 15:26:37
  * @LastEditors: joker.zhang
- * @LastEditTime: 2020-07-09 14:04:32
+ * @LastEditTime: 2020-07-13 10:29:43
  * @Description: For Automation
 -->
 {% load staticfiles %}
@@ -23,30 +23,22 @@
 </head>
 
 <body>
-    <div class="row clearfix">
-        <div class="col-md-2 column">
-        </div>
-        <div class="col-md-6 column">
-            <ul class="nav nav-pills">
-                <li class="active">
-                    <a href="{% url 'home' %}">首页</a>
-                </li>
-                <li>
-                    <a href="{% url 'test_case_list' %}">列表</a>
-                </li>
-                <li class="disabled">
-                    <a href="#">报告</a>
-                </li>
-            </ul>
-            <div class="col-md-4 column">
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{% url 'home' %}">首页</a>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="{% url 'test_case_list' %}">列表</a></li>
+                        <li><a href="{% url 'test_case_list' %}">报告</a></li>
+                </div>
             </div>
-        </div>
-
+        </nav>
         {% block content %}{% endblock %}
         <hr>
         <p class="base-content">
             -- 需求驱动学习 --</p>
-
 </body>
 
 </html>

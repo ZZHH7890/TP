@@ -2,7 +2,7 @@
  * @Author: joker.zhang
  * @Date: 2020-07-01 11:45:37
  * @LastEditors: joker.zhang
- * @LastEditTime: 2020-07-12 23:11:58
+ * @LastEditTime: 2020-07-13 14:12:57
  * @Description: For Automation
 -->
 
@@ -35,9 +35,6 @@
             }
         }
     }
-
-
-
 </script>
 
 <div class="container">
@@ -102,7 +99,11 @@
                                 {{test_case.owner}}
                             </td>
                             <td>
-                                <strong><a href="#">修改</a></strong>
+                                <form role="form" action="update_form/" method="POST">
+                                    <input type="hidden" name="test_case_id" value="{{test_case.pk}}">
+                                    <button class="btn btn-lg btn-primary btn-block" type="submit">修改</button>
+                                    {% csrf_token %}
+                                </form>
                                 <form role="form" action="delete_action/" method="POST">
                                     <input type="hidden" name="test_case_id" value="{{test_case.pk}}">
                                     <button class="btn btn-lg btn-primary btn-block" type="submit">删除</button>
