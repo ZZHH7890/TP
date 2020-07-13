@@ -2,10 +2,10 @@
 @Author: joker.zhang
 @Date: 2020-06-23 10:50:40
 @LastEditors: joker.zhang
-@LastEditTime: 2020-07-13 16:20:26
+@LastEditTime: 2020-07-13 19:56:04
 @Description: For Automation
 '''
-from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, redirect
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from .models import TestCases
@@ -30,12 +30,8 @@ def add_action(request):
         re = request.POST["TC_remark"]
         TestCases.objects.create(TC_name=name, TC_set_up=su, TC_params=pa, TC_checks=cer,
                                  TC_next_step=ns, TC_project=pro, TC_version=ver, owner=oer, TC_remark=re)
-    test_case_all_list = TestCases.objects.all()
-    paginator = Paginator(test_case_all_list, 5)
-    page_num = request.GET.get('page', 1)
-    page_of_test_cases = paginator.get_page(page_num)
-    context = {}
-    context['page_of_test_cases'] = page_of_test_cases
+    return redirect('test_case_list')
+
 
 def delete_action(request):
     if request.method == "POST":
