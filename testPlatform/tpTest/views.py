@@ -2,7 +2,7 @@
 @Author: joker.zhang
 @Date: 2020-06-23 10:50:40
 @LastEditors: joker.zhang
-@LastEditTime: 2020-07-13 22:31:05
+@LastEditTime: 2020-07-15 10:59:55
 @Description: For Automation
 '''
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, redirect
@@ -38,6 +38,16 @@ def delete_action(request):
         test_case_pk = request.POST["test_case_id"]
         TestCases.objects.filter(id=test_case_pk).delete()
     return redirect('test_case_list')
+
+
+def delete_all_action(request):
+    if request.method == "POST":
+        test_case_pks = request.POST.getlist["test_case_ids"]
+        for test_case_pk in test_case_pks:
+            if test_case_pk != '':
+                TestCases.objects.filter(id=test_case_pk).delete()
+    return redirect('test_case_list')
+
 
 def update_form(request):
     if request.method == "POST":

@@ -2,7 +2,7 @@
  * @Author: joker.zhang
  * @Date: 2020-07-01 11:45:37
  * @LastEditors: joker.zhang
- * @LastEditTime: 2020-07-13 23:29:31
+ * @LastEditTime: 2020-07-15 19:56:54
  * @Description: For Automation
 -->
 
@@ -16,68 +16,42 @@
 {% load staticfiles %}
 {% block header_extends %}
 <link rel="stylesheet" href="{% static 'tpTest/test_case.css' %}">
+<script type="text/javascript" src="{% static 'tpTest/test_case_list.js' %}"></script>
 {% endblock %}
 
 <!-- 页面内容 -->
 {% block content %}
-<script type="text/javascript">
-    function seltAll() {
-        var chckBoxSign = document.getElementById("selectAll");       //全选/反选的选择框id
-        var chckBox = document.getElementsByName("check_box");    //单选框check_box
-        var num = chckBox.length;
-        if (chckBoxSign.checked) {
-            for (var index = 0; index < num; index++) {
-                chckBox[index].checked = true;
-            }
-        } else {
-            for (var index = 0; index < num; index++) {
-                chckBox[index].checked = false;
-            }
-        }
-    }
-</script>
 
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <a href="{% url 'add_form' %}"><button type="button" class="btn btn-primary">添加用例</button></a>
+                    <ul>
+                        <li><a href="{% url 'add_form' %}"><button type="button"
+                                    class="btn btn-primary">添加用例</button></a></li>
+                        <li><a onclick="getValues()" href="" class="btn btn-danger input-sm">批量删除</a></li>
+                    </ul>
                 </div>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th><input type="checkbox" id="selectAll" onclick="seltAll()">全选</th>
-                            <th>
-                                编号
-                            </th>
-                            <th>
-                                用例名称
-                            </th>
-                            <th>
-                                用例前置
-                            </th>
-                            <th>
-                                接口参数
-                            </th>
-                            <th>
-                                检验
-                            </th>
-                            <th>
-                                用例版本
-                            </th>
-                            <th>
-                                维护人员
-                            </th>
-                            <th>
-                                操作
-                            </th>
+                            <th><input type="checkbox" id="select_all" onclick="selectAll()">全选</th>
+                            <th>编号</th>
+                            <th>用例名称</th>
+                            <th>用例前置</th>
+                            <th>接口参数</th>
+                            <th>检验称</th>
+                            <th>用例版本</th>
+                            <th>维护人员</th>
+                            <th>操作</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for test_case in page_of_test_cases %}
                         <tr>
-                            <td><input type="checkbox" value="{{test_case.pk}}" name="check_box"></td>
+                            <td><input type="checkbox" value="{{test_case.pk}}" name="check_box" onclick="selectOne()">
+                            </td>
                             <td>
                                 {{test_case.pk}}
                             </td>

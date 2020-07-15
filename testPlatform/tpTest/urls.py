@@ -2,7 +2,7 @@
 @Author: joker.zhang
 @Date: 2020-06-23 14:30:15
 @LastEditors: joker.zhang
-@LastEditTime: 2020-07-13 14:29:48
+@LastEditTime: 2020-07-15 19:52:54
 @Description: For Automation
 '''
 
@@ -17,4 +17,5 @@ urlpatterns = [
     path('test_case_list/update_form/', views.update_form, name='update_form'),
     path('test_case_list/update_form/update_action/', views.update_action, name='update_action'),
     path('test_case_list/delete_action/', views.delete_action, name='delete_action'),
+    path('test_case_list/delete_all_action/', views.delete_all_action, name='delete_all_action'),
 ]
