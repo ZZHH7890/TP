@@ -1,0 +1,13 @@
+2020-07-16 19:41:08,282 INFO test_case_pks:['32', '33'] views.py[line:50] delete_all_action 
+2020-07-16 19:41:08,282 INFO test_case_pks type:<class 'list'> views.py[line:51] delete_all_action 
+2020-07-16 19:41:18,801 INFO test_case_pks:['34'] views.py[line:50] delete_all_action 
+2020-07-16 19:41:18,801 INFO test_case_pks type:<class 'list'> views.py[line:51] delete_all_action 
+2020-07-16 19:41:39,500 INFO request.POST:<QueryDict: {'test_case_id': ['35'], 'csrfmiddlewaretoken': ['IsMW3H2tcZ1u9IL88TVbh8sA4f45hAHDzkfowRQ0ZWAqLvZZrtUwQgk2B9P5L6Zu']}> views.py[line:41] delete_action 
+2020-07-16 19:44:17,906 INFO test_case_pks:['', '37', '38'] views.py[line:50] delete_all_action 
+2020-07-16 19:44:17,906 INFO test_case_pks type:<class 'list'> views.py[line:51] delete_all_action 
+2020-07-16 19:44:33,066 INFO test_case_pks:['', '37', '38'] views.py[line:50] delete_all_action 
+2020-07-16 19:44:33,066 INFO test_case_pks type:<class 'list'> views.py[line:51] delete_all_action 
+2020-07-16 19:44:38,384 INFO test_case_pks:['36', '37', '38', '39'] views.py[line:50] delete_all_action 
+2020-07-16 19:44:38,384 INFO test_case_pks type:<class 'list'> views.py[line:51] delete_all_action 
+2020-07-16 19:47:37,737 INFO test_case_pks:['', '', '', '43'] views.py[line:50] delete_all_action 
+2020-07-16 19:47:37,738 INFO test_case_pks type:<class 'list'> views.py[line:51] delete_all_action 

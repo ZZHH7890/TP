@@ -2,10 +2,13 @@
 @Author: joker.zhang
 @Date: 2020-06-23 10:50:40
 @LastEditors: joker.zhang
-@LastEditTime: 2020-07-15 10:59:55
+@LastEditTime: 2020-07-16 19:40:14
 @Description: For Automation
 '''
-from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, redirect
+
+from common.log import OperateLog
+import json
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from .models import TestCases
@@ -35,6 +38,7 @@ def add_action(request):
 
 def delete_action(request):
     if request.method == "POST":
+        OperateLog.get_logger().info("request.POST:%s", request.POST)
         test_case_pk = request.POST["test_case_id"]
         TestCases.objects.filter(id=test_case_pk).delete()
     return redirect('test_case_list')
@@ -42,10 +46,11 @@ def delete_action(request):
 
 def delete_all_action(request):
     if request.method == "POST":
-        test_case_pks = request.POST.getlist["test_case_ids"]
+        test_case_pks = request.POST.getlist('test_case_ids')
+        OperateLog.get_logger().info("test_case_pks:%s", test_case_pks)
+        OperateLog.get_logger().info("test_case_pks type:%s", type(test_case_pks))
         for test_case_pk in test_case_pks:
-            if test_case_pk != '':
-                TestCases.objects.filter(id=test_case_pk).delete()
+            TestCases.objects.filter(id=test_case_pk).delete()
     return redirect('test_case_list')
 
 

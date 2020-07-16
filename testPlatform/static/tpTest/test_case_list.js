@@ -2,7 +2,7 @@
  * @Author: joker.zhang
  * @Date: 2020-07-15 11:06:43
  * @LastEditors: joker.zhang
- * @LastEditTime: 2020-07-15 19:59:48
+ * @LastEditTime: 2020-07-16 19:43:15
  * @Description: For Automation
  */
 
@@ -27,9 +27,16 @@ function selectOne() {
     one.checked = true;
 }
 
+function getCookie(name) {
+    var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+    return r ? r[1] : undefined;
+}
+
+
+// https://www.cnblogs.com/xiximayou/p/11792875.html
 function getValues() {
     var valArr = [];
-    var ones = document.getElementsByName('item');
+    var ones = document.getElementsByName('check_box');
     for (var i = 0; i < ones.length; i++) {
         if (ones[i].checked == true) {
             valArr[i] = ones[i].value
@@ -43,16 +50,19 @@ function getValues() {
             url: "delete_all_action/",
             // 全部大写
             type: 'POST',
-            contenType: 'application/json',
+            dateType:'JSON',
+            // contentType: 'application/json',
             // 不加这个，ajax会将结果后边加个[]，例如{ 'vals[]': [4, 6, 8] }
             traditional: true,
             //不加这个，会报服务器终止了一个在运行的程序
             async: false,
             data: {
-                'vals': valArr
+                'test_case_ids': valArr
             },
+            headers: { "X-CSRFtoken": getCookie("csrftoken") },
             success: function () {
                 alert("删除成功");
+                window.location.reload(true);
             },
             error: function () {
                 alert("删除失败");
