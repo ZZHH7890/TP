@@ -1,0 +1,4 @@
+2020-07-16 22:57:34,482 INFO test_case_pks:['', '41', '', '43'] views.py[line:50] delete_all_action 
+2020-07-16 22:57:34,482 INFO test_case_pks type:<class 'list'> views.py[line:51] delete_all_action 
+2020-07-16 22:58:05,928 INFO test_case_pks:['40'] views.py[line:50] delete_all_action 
+2020-07-16 22:58:05,928 INFO test_case_pks type:<class 'list'> views.py[line:51] delete_all_action 

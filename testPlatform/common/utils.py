@@ -3,21 +3,12 @@
 @LastEditors: joker.zhang
 @Description: For Automation
 @Date: 2019-02-15 11:44:36
-@LastEditTime: 2020-07-16 11:48:12
+@LastEditTime: 2020-07-16 23:07:51
 '''
 
-from selenium import webdriver
-import requests
-import json
-import os
 import time
 import sys
-import xlrd
-import pymssql
-import configparser
-import shutil
-import socket
-#from Common.log import OperateLog
+import os
 sys.path.append(os.path.dirname(os.path.abspath('.')))
 
 

@@ -2,7 +2,7 @@
  * @Author: joker.zhang
  * @Date: 2020-07-01 11:45:37
  * @LastEditors: joker.zhang
- * @LastEditTime: 2020-07-16 10:02:43
+ * @LastEditTime: 2020-07-16 23:54:56
  * @Description: For Automation
 -->
 
@@ -73,6 +73,11 @@
                                 {{test_case.owner}}
                             </td>
                             <td>
+                                <form role="form" action="copy_form/" method="POST">
+                                    <input type="hidden" name="test_case_id" value="{{test_case.pk}}">
+                                    <button class="btn btn-lg btn-primary btn-block" type="submit">复制</button>
+                                    {% csrf_token %}
+                                </form>
                                 <form role="form" action="update_form/" method="POST">
                                     <input type="hidden" name="test_case_id" value="{{test_case.pk}}">
                                     <button class="btn btn-lg btn-primary btn-block" type="submit">修改</button>
@@ -81,6 +86,11 @@
                                 <form role="form" action="delete_action/" method="POST">
                                     <input type="hidden" name="test_case_id" value="{{test_case.pk}}">
                                     <button class="btn btn-lg btn-primary btn-block" type="submit">删除</button>
+                                    {% csrf_token %}
+                                </form>
+                                <form role="form" action="execute_action/" method="POST">
+                                    <input type="hidden" name="test_case_id" value="{{test_case.pk}}">
+                                    <button class="btn btn-lg btn-primary btn-block" type="submit">执行</button>
                                     {% csrf_token %}
                                 </form>
                             </td>
