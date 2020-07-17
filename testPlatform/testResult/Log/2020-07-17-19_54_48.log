@@ -1,0 +1,10 @@
+2020-07-17 19:54:48,023 INFO 用例编号为:56 views.py[line:35] execute_action 
+2020-07-17 19:54:48,024 INFO 用例名称为:1 views.py[line:36] execute_action 
+2020-07-17 19:54:48,024 INFO 用例前提条件为:1 views.py[line:37] execute_action 
+2020-07-17 19:54:48,024 INFO 用例参数为:1 views.py[line:38] execute_action 
+2020-07-17 19:54:48,024 INFO 用例检验为:1 views.py[line:39] execute_action 
+2020-07-17 19:54:48,025 INFO 用例下一步为:无 views.py[line:40] execute_action 
+2020-07-17 19:54:48,025 INFO 用例项目为:无 views.py[line:41] execute_action 
+2020-07-17 19:54:48,025 INFO 用例版本为:无 views.py[line:42] execute_action 
+2020-07-17 19:54:48,025 INFO 用例维护人为:joker views.py[line:43] execute_action 
+2020-07-17 19:54:48,026 INFO 用例备注为:1 views.py[line:44] execute_action 

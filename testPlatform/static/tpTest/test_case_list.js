@@ -2,7 +2,7 @@
  * @Author: joker.zhang
  * @Date: 2020-07-15 11:06:43
  * @LastEditors: joker.zhang
- * @LastEditTime: 2020-07-16 19:43:15
+ * @LastEditTime: 2020-07-17 08:52:48
  * @Description: For Automation
  */
 
@@ -59,6 +59,7 @@ function getValues() {
             data: {
                 'test_case_ids': valArr
             },
+            // https://blog.csdn.net/qq_43054982/article/details/85269403
             headers: { "X-CSRFtoken": getCookie("csrftoken") },
             success: function () {
                 alert("删除成功");
