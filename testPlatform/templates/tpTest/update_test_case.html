@@ -2,7 +2,7 @@
  * @Author: joker.zhang
  * @Date: 2020-07-08 11:47:40
  * @LastEditors: joker.zhang
- * @LastEditTime: 2020-07-16 23:30:53
+ * @LastEditTime: 2020-07-19 01:44:39
  * @Description: For Automation
 -->
 {% extends 'base.html' %}
@@ -20,6 +20,7 @@
 <!-- 页面内容 -->
 {% block content %}
 
+
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
@@ -33,58 +34,88 @@
                     </div>
                     <div class="form-group">
                         <div>
-                            <label>用例概述:</label>
-                            <input type="text" class="form-control" maxlength="500" name="TC_name"
-                                value="{{ test_case.TC_name }}">
+                            <label>用例描述:</label>
+                            <input type="text" class="form-control" maxlength="50" name="tname"
+                                value="{{test_case.name}}">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div>
+                            <label>请求地址:</label>
+                            <input type="text" class="form-control" maxlength="100" name="turl"
+                                value="{{test_case.url}}">
                         </div>
                     </div>
                     <div class="form-group">
                         <div>
-                            <label>用例前置:</label>
-                            <textarea cols="40" rows="10" class="form-control"
-                                name="TC_set_up">{{ test_case.TC_set_up }}</textarea>
+                            <label>请求方法:</label>
+                            <input type="text" class="form-control" maxlength="20" name="tmethod"
+                                value="{{test_case.method}}">
                         </div>
                     </div>
                     <div class="form-group">
                         <div>
-                            <label>接口参数:</label>
+                            <label>登录邮箱:</label>
+                            <input type="text" class="form-control" maxlength="50" name="temail"
+                                value="{{test_case.email}}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <label>登录密码:</label>
+                            <input type="text" class="form-control" maxlength="20" name="tpw" value="{{test_case.pw}}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <label>项目:</label>
+                            <input type="text" class="form-control" maxlength="20" name="tproject"
+                                value="{{test_case.project}}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <label>迭代版本:</label>
+                            <input type="text" class="form-control" maxlength="20" name="titeration"
+                                value="{{test_case.iteration}}">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div>
+                            <label>前提条件设置:</label>
                             <textarea cols="40" rows="10" class="form-control"
-                                name="TC_params">{{ test_case.TC_params }}</textarea>
+                                name="tsu_env">{{test_case.su_env}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <label>请求参数:</label>
+                            <textarea cols="40" rows="10" class="form-control"
+                                name="tparams">{{test_case.params}}</textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <div>
                             <label>检验:</label>
                             <textarea cols="40" rows="10" class="form-control"
-                                name="TC_checks">{{ test_case.TC_checks }}</textarea>
+                                name="tchecker">{{test_case.checker}}</textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <div>
-                            <label>下一步参数:</label>
-                            <input type="text" value="无" class="form-control" maxlength="200" name="TC_next_step"
-                                value="{{ test_case.TC_next_step}}">
+                            <label>清理数据:</label>
+                            <textarea cols="40" rows="10" class="form-control"
+                                name="ttd_env">{{test_case.td_env}}</textarea>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div>
-                            <label>项目:</label>
-                            <input type="text" value="无" class="form-control" maxlength="50" name="TC_project"
-                                value="{{ test_case.TC_project}}">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div>
-                            <label>用例版本:</label>
-                            <input type="text" value="无" class="form-control" maxlength="50" name="TC_version"
-                                value="{{ test_case.TC_version}}">
-                        </div>
-                    </div>
+
                     <div class="form-group">
                         <div>
                             <label>维护人员:</label>
                             <div>
-                                <select name="owner">
+                                <select name="towner">
                                     <option value="1" selected="selected">joker</option>
                                     <option value="2">yandy</option>
                                 </select>
@@ -93,11 +124,11 @@
                         <div class="form-group">
                             <div>
                                 <label>备注:</label>
-                                <textarea cols="40" rows="10" class="form-control"
-                                    name="TC_remark">{{ test_case.TC_remark}}</textarea>
+                                <input type="text" class="form-control" maxlength="200" name="tremark"
+                                    value="{{test_case.remark}}">
                             </div>
                         </div>
-                        <button class=" btn btn-lg btn-primary btn-block" type="submit">提交</button>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
                         <button class="btn-block btn-success btn-lg text-center" onclick="history.back()">返回</button>
                         {% csrf_token %}
                 </form>

@@ -2,7 +2,7 @@
  * @Author: joker.zhang
  * @Date: 2020-07-08 11:47:40
  * @LastEditors: joker.zhang
- * @LastEditTime: 2020-07-14 09:44:46
+ * @LastEditTime: 2020-07-19 01:21:56
  * @Description: For Automation
 -->
 {% extends 'base.html' %}
@@ -28,53 +28,80 @@
                 <form role="form" action="add_action/" method="POST">
                     <div class="form-group">
                         <div>
-                            <label>用例概述:</label>
-                            <input type="text" class="form-control" maxlength="500" name="TC_name">
+                            <label>用例描述:</label>
+                            <input type="text" class="form-control" maxlength="50" name="tname">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div>
+                            <label>请求地址:</label>
+                            <input type="text" class="form-control" maxlength="100" name="turl">
                         </div>
                     </div>
                     <div class="form-group">
                         <div>
-                            <label>用例前置:</label>
-                            <textarea cols="40" rows="10" class="form-control" name="TC_set_up"></textarea>
+                            <label>请求方法:</label>
+                            <input type="text" class="form-control" maxlength="20" name="tmethod">
                         </div>
                     </div>
                     <div class="form-group">
                         <div>
-                            <label>接口参数:</label>
-                            <textarea cols="40" rows="10" class="form-control" name="TC_params"></textarea>
+                            <label>登录邮箱:</label>
+                            <input type="text" class="form-control" maxlength="50" name="temail">
                         </div>
                     </div>
                     <div class="form-group">
                         <div>
-                            <label>检验:</label>
-                            <textarea cols="40" rows="10" class="form-control" name="TC_checks"></textarea>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div>
-                            <label>下一步参数:</label>
-                            <input type="text" value="无" class="form-control" maxlength="200" name="TC_next_step">
+                            <label>登录密码:</label>
+                            <input type="text" class="form-control" maxlength="20" name="tpw">
                         </div>
                     </div>
                     <div class="form-group">
                         <div>
                             <label>项目:</label>
-                            <input type="text" value="无" class="form-control" maxlength="50" name="TC_project">
+                            <input type="text" class="form-control" maxlength="20" name="tproject">
                         </div>
                     </div>
                     <div class="form-group">
                         <div>
-                            <label>用例版本:</label>
-                            <input type="text" value="无" class="form-control" maxlength="50" name="TC_version">
+                            <label>迭代版本:</label>
+                            <input type="text" class="form-control" maxlength="20" name="titeration">
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        <div>
+                            <label>前提条件设置:</label>
+                            <textarea cols="40" rows="10" class="form-control" name="tsu_env"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <label>请求参数:</label>
+                            <textarea cols="40" rows="10" class="form-control" name="tparams"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <label>检验:</label>
+                            <textarea cols="40" rows="10" class="form-control" name="tchecker"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <label>清理数据:</label>
+                            <textarea cols="40" rows="10" class="form-control" name="ttd_env"></textarea>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <div>
                             <label>维护人员:</label>
                             <div>
-                                <select name="owner">
-                                    <option value="">---------</option>
-                                    <option value="1" selected="selected">joker</option>
+                                <select name="towner">
+                                    <option value="" selected="selected">---------</option>
+                                    <option value="1">joker</option>
                                     <option value="2">yandy</option>
                                 </select>
                             </div>
@@ -82,12 +109,12 @@
                         <div class="form-group">
                             <div>
                                 <label>备注:</label>
-                                <textarea cols="40" rows="10" class="form-control" name="TC_remark"></textarea>
+                                <input type="text" class="form-control" maxlength="200" name="tremark">
                             </div>
                         </div>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
                         <button class="btn-block btn-success btn-lg text-center" onclick="history.back()">返回</button>
-                        {% csrf_token %} 
+                        {% csrf_token %}
                 </form>
             </div>
         </div>

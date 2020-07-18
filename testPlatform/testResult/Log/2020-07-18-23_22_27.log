@@ -1,0 +1,58 @@
+2020-07-18 23:22:27,862 INFO 用例编号为:59 views.py[line:35] execute_action 
+2020-07-18 23:22:27,863 INFO 用例名称为:[CASE]-SearchInquiryInfoList-(-13010901) views.揽件城市枚举值错误py[line:36] execute_action 
+2020-07-18 23:22:27,863 INFO 用例前提条件为:{
+
+ "config": {
+
+  "url": "https://freight.17track.net/inquiryquoteapi/call",
+
+  "method": "post"
+
+ }
+
+} views.py[line:37] execute_action 
+2020-07-18 23:22:27,863 INFO 用例参数为:{
+
+ "version": "1.0",
+
+ "method": "SearchInquiryInfoList",
+
+ "param": {
+
+  "n": 1,
+
+  "s": 10,
+
+  "pc": "99999999",
+
+  "dc": "",
+
+  "kw": "",
+
+  "ot": 0
+
+ }
+
+} views.py[line:38] execute_action 
+2020-07-18 23:22:27,864 INFO 用例检验为:{
+
+ "checkers": [{
+
+  "k": "Code",
+
+  "v": "-13010901",
+
+  "ct": "EQ"
+
+ }]
+
+} views.py[line:39] execute_action 
+2020-07-18 23:22:27,864 INFO 用例下一步为:无 views.py[line:40] execute_action 
+2020-07-18 23:22:27,864 INFO 用例项目为:无 views.py[line:41] execute_action 
+2020-07-18 23:22:27,865 INFO 用例版本为:无 views.py[line:42] execute_action 
+2020-07-18 23:22:27,865 INFO 用例维护人为:joker views.py[line:43] execute_action 
+2020-07-18 23:22:27,865 INFO 用例维护人:<class 'django.contrib.auth.models.User'> views.py[line:44] execute_action 
+2020-07-18 23:22:27,866 INFO 用例备注为: views.py[line:45] execute_action 
+2020-07-18 23:22:27,866 INFO pytest cmd:['C:\\Users\\Administrator\\vs\\TP\\testPlatform\\testCases\\API', '-q', '--html=C:\\Users\\Administrator\\vs\\TP\\testPlatform\\\\testResult\\Report\\Report.html'] views.py[line:56] execute_action 
+2020-07-18 23:22:28,493 INFO test_case_id为:59 test_api.py[line:28] test_api_main 
+2020-07-18 23:22:28,494 INFO url为:https://freight.17track.net/inquiryquoteapi/call test_api.py[line:30] test_api_main 

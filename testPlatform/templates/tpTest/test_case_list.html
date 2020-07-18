@@ -2,7 +2,7 @@
  * @Author: joker.zhang
  * @Date: 2020-07-01 11:45:37
  * @LastEditors: joker.zhang
- * @LastEditTime: 2020-07-16 23:54:56
+ * @LastEditTime: 2020-07-19 00:11:15
  * @Description: For Automation
 -->
 
@@ -38,11 +38,11 @@
                         <tr>
                             <th><input type="checkbox" id="select_all" onclick="selectAll()">全选</th>
                             <th>编号</th>
-                            <th>用例名称</th>
-                            <th>用例前置</th>
-                            <th>接口参数</th>
-                            <th>检验称</th>
-                            <th>用例版本</th>
+                            <th>用例描述</th>
+                            <th>请求参数</th>
+                            <th>检验</th>
+                            <th>项目</th>
+                            <th>迭代版本</th>
                             <th>维护人员</th>
                             <th>操作</th>
                         </tr>
@@ -56,18 +56,18 @@
                                 {{test_case.pk}}
                             </td>
                             <td>
-                                <a href="{% url 'test_case_detail' test_case.pk %}">{{ test_case.TC_name }}</a> </td>
+                                <a href="{% url 'test_case_detail' test_case.pk %}">{{ test_case.name }}</a> </td>
                             <td>
-                                {{test_case.TC_set_up}}
+                                {{test_case.params}}
                             </td>
                             <td>
-                                {{test_case.TC_params}}
+                                {{test_case.checker}}
                             </td>
                             <td>
-                                {{test_case.TC_checks}}
+                                {{test_case.project}}
                             </td>
                             <td>
-                                {{test_case.TC_version}}
+                                {{test_case.iteration}}
                             </td>
                             <td>
                                 {{test_case.owner}}

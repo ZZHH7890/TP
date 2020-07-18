@@ -2,20 +2,20 @@
 @Author: joker.zhang
 @Date: 2020-06-23 10:50:40
 @LastEditors: joker.zhang
-@LastEditTime: 2020-07-07 17:47:19
+@LastEditTime: 2020-07-18 23:45:50
 @Description: For Automation
 '''
 # Register your models here.
 from django.contrib import admin
-from .models import TestCases
+from .models import TestCaseInfo
 
 
-@admin.register(TestCases)
-class TestCasesAdmin(admin.ModelAdmin):
-    list_display = ['TC_name', 'TC_set_up', 'TC_params',
-                    'TC_checks', 'TC_next_step', 'TC_version', 'owner', 'created_time', 'last_updated_time']
-    list_filter = ['TC_version', 'owner']
-    search_fields = ['TC_name']
+@admin.register(TestCaseInfo)
+class TestCaseInfoAdmin(admin.ModelAdmin):
+    list_display = ['name', 'url', 'method',
+                    'email', 'pw', 'project', 'params', 'checker', 'su_env', 'td_env', 'created_time', 'last_updated_time']
+    list_filter = ['iteration', 'owner']
+    search_fields = ['name']
     list_per_page = 10
 
 

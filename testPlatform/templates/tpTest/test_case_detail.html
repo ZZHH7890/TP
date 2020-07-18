@@ -2,7 +2,7 @@
  * @Author: joker.zhang
  * @Date: 2020-07-01 16:29:29
  * @LastEditors: joker.zhang
- * @LastEditTime: 2020-07-13 23:29:41
+ * @LastEditTime: 2020-07-19 01:49:01
  * @Description: For Automation
 -->
 {% extends 'base.html' %}
@@ -25,19 +25,90 @@
             <div class="panel-heading">
                 <a href="{% url 'add_form' %}"><button type="button" class="btn btn-primary">添加用例</button></a>
             </div>
-            <h3>{{ test_case.TC_name }}</h3>
-            <ul class="test-case-info-description">
-                <li>用例前置：{{ test_case.TC_set_up}}</li>
-                <li>接口参数：{{ test_case.TC_params}}</li>
-                <li>检验：{{ test_case.TC_checks}}</li>
-                <li>下一步参数：{{ test_case.TC_next_step}}</li>
-                <li>项目：{{ test_case.TC_project}}</li>
-                <li>用例版本：{{ test_case.TC_version}}</li>
-                <li>维护人员：{{ test_case.owner}}</li>
-                <li>创建时间：{{ test_case.created_time}}</li>
-                <li>最后修改时间：{{ test_case.last_updated_time}}</li>
-                <li>备注：{{ test_case.TC_remark}}</li>
-            </ul>
+            <div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>key</th>
+                            <th>value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>用例编号</td>
+                            <td>{{test_case.pk}}</td>
+                        </tr>
+                        <tr>
+                            <td>用例描述</td>
+                            <td>{{test_case.name}}</td>
+                        </tr>
+                        <tr>
+                            <td>请求地址</td>
+                            <td>{{test_case.url}}</td>
+                        </tr>
+                        <tr>
+                            <td>请求方法</td>
+                            <td>{{test_case.method}}</td>
+                        </tr>
+                        <tr>
+                            <td>登录邮箱</td>
+                            <td>{{test_case.email}}</td>
+                        </tr>
+                        <tr>
+                            <td>登录密码</td>
+                            <td>{{test_case.pw}}</td>
+                        </tr>
+                        <tr>
+                            <td>项目</td>
+                            <td>{{test_case.project}}</td>
+                        </tr>
+                        <tr>
+                            <td>迭代版本</td>
+                            <td>{{test_case.iteration}}</td>
+                        </tr>
+                        <tr>
+                            <td>前提条件设置</td>
+                            <td>{{test_case.su_env}}</td>
+                        </tr>
+                        <tr>
+                            <td>请求参数</td>
+                            <td>{{test_case.params}}</td>
+                        </tr>
+                        <tr>
+                            <td>接口响应</td>
+                            <td>{{test_case.ret}}</td>
+                        </tr>
+                        <tr>
+                            <td>检验</td>
+                            <td>{{test_case.checker}}</td>
+                        </tr>
+                        <tr>
+                            <td>多业务数据</td>
+                            <td>{{test_case.next_step}}</td>
+                        </tr>
+                        <tr>
+                            <td>清理数据</td>
+                            <td>{{test_case.td_env}}</td>
+                        </tr>
+                        <tr>
+                            <td>维护人员</td>
+                            <td>{{test_case.owner}}</td>
+                        </tr>
+                        <tr>
+                            <td>创建时间</td>
+                            <td>{{test_case.created_time}}</td>
+                        </tr>
+                        <tr>
+                            <td>最后维护时间</td>
+                            <td>{{test_case.last_updated_time}}</td>
+                        </tr>
+                        <tr>
+                            <td>备注</td>
+                            <td>{{test_case.remark}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
