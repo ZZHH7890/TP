@@ -2,7 +2,7 @@
  * @Author: joker.zhang
  * @Date: 2020-07-01 11:45:37
  * @LastEditors: joker.zhang
- * @LastEditTime: 2020-07-19 00:11:15
+ * @LastEditTime: 2020-07-20 19:30:14
  * @Description: For Automation
 -->
 
@@ -27,11 +27,12 @@
         <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <ul>
-                        <li><a href="{% url 'add_form' %}"><button type="button"
-                                    class="btn btn-primary">添加用例</button></a></li>
-                        <li><a onclick="getValues()" class="btn btn-danger input-sm">批量删除</a></li>
-                    </ul>
+                    <div style="float:right"><a href="{% url 'add_form' %}" class="btn btn-danger input-sm">
+                            添加用例</a></div>
+                    <div style="float:right">
+                        <a onclick="getDeleteValues()" class="btn btn-danger input-sm">批量删除</a></div>
+                    <div style="float:right">
+                        <a onclick="getExecuteValues()" class="btn btn-danger input-sm">批量执行</a></div>
                 </div>
                 <table class="table table-bordered">
                     <thead>
@@ -75,22 +76,26 @@
                             <td>
                                 <form role="form" action="copy_form/" method="POST">
                                     <input type="hidden" name="test_case_id" value="{{test_case.pk}}">
-                                    <button class="btn btn-lg btn-primary btn-block" type="submit">复制</button>
+                                    <div style="float:right">
+                                        <button class="btn btn-danger input-sm" type="submit">复制</button></div>
                                     {% csrf_token %}
                                 </form>
                                 <form role="form" action="update_form/" method="POST">
                                     <input type="hidden" name="test_case_id" value="{{test_case.pk}}">
-                                    <button class="btn btn-lg btn-primary btn-block" type="submit">修改</button>
+                                    <div style="float:right">
+                                        <button class="btn btn-danger input-sm" type="submit">修改</button></div>
                                     {% csrf_token %}
                                 </form>
                                 <form role="form" action="delete_action/" method="POST">
                                     <input type="hidden" name="test_case_id" value="{{test_case.pk}}">
-                                    <button class="btn btn-lg btn-primary btn-block" type="submit">删除</button>
+                                    <div style="float:right">
+                                        <button class="btn btn-danger input-sm" type="submit">删除</button></div>
                                     {% csrf_token %}
                                 </form>
                                 <form role="form" action="execute_action/" method="POST">
                                     <input type="hidden" name="test_case_id" value="{{test_case.pk}}">
-                                    <button class="btn btn-lg btn-primary btn-block" type="submit">执行</button>
+                                    <div style="float:right">
+                                        <button class="btn btn-danger input-sm" type="submit">执行</button></div>
                                     {% csrf_token %}
                                 </form>
                             </td>

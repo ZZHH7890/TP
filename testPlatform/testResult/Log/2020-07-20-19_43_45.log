@@ -1,0 +1,2 @@
+2020-07-20 19:43:45,351 INFO 需要执行的用例为:['2', '10', '11'] views.py[line:24] execute_all_action 
+2020-07-20 19:44:09,365 INFO 需要执行的用例为:['2', '10', '11'] views.py[line:24] execute_all_action 

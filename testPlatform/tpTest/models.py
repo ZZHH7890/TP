@@ -2,7 +2,7 @@
 @Author: joker.zhang
 @Date: 2020-06-23 10:50:40
 @LastEditors: joker.zhang
-@LastEditTime: 2020-07-19 00:18:42
+@LastEditTime: 2020-07-20 14:53:36
 @Description: For Automation
 '''
 from django.db import models
@@ -12,7 +12,7 @@ from django.contrib.auth.models import User
 
 
 class TestCaseInfo(models.Model):
-    name = models.CharField(max_length=50, verbose_name='用例描述')
+    name = models.CharField(max_length=100, verbose_name='用例描述')
     url = models.CharField(max_length=100, verbose_name='请求地址')
     method = models.CharField(max_length=20, verbose_name='请求方法')
     email = models.EmailField(

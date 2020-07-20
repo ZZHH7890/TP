@@ -2,7 +2,7 @@
 @Author: joker.zhang
 @Date: 2020-06-23 10:50:40
 @LastEditors: joker.zhang
-@LastEditTime: 2020-07-19 01:46:16
+@LastEditTime: 2020-07-20 19:46:02
 @Description: For Automation
 '''
 
@@ -11,52 +11,33 @@ import pytest
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
-from common.test_runner import OperateTestRunner
-from common.log import get_logger
+from common.com_test_runner import OperateTestRunner
+from common.com_log import get_logger
 from .models import TestCaseInfo
 
 # Create your views here.
 
 
-# def execute_action(request):
-#     if request.method == "POST":
-#         test_case_pk = request.POST["test_case_id"]
-#         test_case = TestCaseInfo.objects.get(id=test_case_pk)
-#     name = test_case.TC_name
-#     su = test_case.TC_set_up
-#     pa = test_case.TC_params
-#     cer = test_case.TC_checks
-#     ns = test_case.TC_next_step
-#     pro = test_case.TC_project
-#     ver = test_case.TC_version
-#     oer = test_case.owner
-#     re = test_case.TC_remark
+def execute_all_action(request):
+    if request.method == "POST":
+        test_case_pk = request.POST.getlist('test_case_ids')
+    get_logger().info("需要执行的用例为:%s", test_case_pk)
 
-#     get_logger().info("用例编号为:%s", test_case_pk)
-#     get_logger().info("用例名称为:%s", name)
-#     get_logger().info("用例前提条件为:%s", su)
-#     get_logger().info("用例参数为:%s", pa)
-#     get_logger().info("用例检验为:%s", cer)
-#     get_logger().info("用例下一步为:%s", ns)
-#     get_logger().info("用例项目为:%s", pro)
-#     get_logger().info("用例版本为:%s", ver)
-#     get_logger().info("用例维护人为:%s", oer)
-#     get_logger().info("用例维护人:%s", type(oer))
-#     get_logger().info("用例备注为:%s", re)
-#     os.environ.setdefault('test_case_id', test_case_pk)
-#     os.environ.setdefault('test_case_name', name)
-#     os.environ.setdefault('test_case_set_up', su)
-#     os.environ.setdefault('test_case_params', pa)
-#     os.environ.setdefault('test_case_checkers', cer)
-#     os.environ.setdefault('test_case_next_step', ns)
-#     os.environ.setdefault('test_case_project', pro)
-#     os.environ.setdefault('test_case_version', ver)
-#     # os.environ.setdefault('test_case_owner',oer)
-#     os.environ.setdefault('test_case_remark', re)
-#     get_logger().info("pytest cmd:%s", OperateTestRunner.get_pytest_cmd())
-#     pytest.main(OperateTestRunner.get_pytest_cmd())
+    os.environ.setdefault('test_case_id', test_case_pk)
+    pytest.main(OperateTestRunner.get_pytest_cmd())
+    return render(request, 'tpTest/add_test_case.html')
 
-#     return render(request, 'tpTest/add_test_case.html')
+
+def execute_action(request):
+    if request.method == "POST":
+        test_case_pk = request.POST["test_case_id"]
+        #test_case = TestCaseInfo.objects.get(id=test_case_pk)
+
+    os.environ.setdefault('test_case_id', test_case_pk)
+    get_logger().info("pytest cmd:%s", OperateTestRunner.get_pytest_cmd())
+    pytest.main(OperateTestRunner.get_pytest_cmd())
+
+    return render(request, 'tpTest/add_test_case.html')
 
 
 def add_form(request):

@@ -2,11 +2,11 @@
 @Author: joker.zhang
 @Date: 2020-07-17 11:25:03
 @LastEditors: joker.zhang
-@LastEditTime: 2020-07-17 17:49:19
+@LastEditTime: 2020-07-20 17:07:16
 @Description: For Automation
 '''
 import os
-from common.utils import get_folder_path
+from common.com_utils import get_folder_path
 
 
 class OperateTestRunner():

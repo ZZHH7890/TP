@@ -1,1 +1,0 @@
-2020-07-19 01:15:07,481 INFO request.POST:<QueryDict: {'test_case_id': ['1'], 'csrfmiddlewaretoken': ['Yi4flWb59SLhSI9GJl0Dp1WaX756HOIiElWHltnfSq2YivNpTg9799Pe5zvj9M5J']}> views.py[line:113] delete_action 

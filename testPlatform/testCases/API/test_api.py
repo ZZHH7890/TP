@@ -3,28 +3,30 @@
 @LastEditors: joker.zhang
 @Description: For Automation
 @Date: 2019-03-10 22:42:49
-@LastEditTime: 2020-07-18 23:20:53
+@LastEditTime: 2020-07-20 17:49:33
 '''
 
 import json
 import os
-from common.log import get_logger
+import pytest
+import requests
+from common.com_log import get_logger
+from testData.conftest import get_test_data
 
 
 # @pytest.mark.skip("skip by pytest.mark.skip!")
-def test_api_main():
+@pytest.mark.parametrize('url, method, params', get_test_data())
+# def test_api_main(test_case_id, name, url, method, email, pw, project, iteration, su_env, params, checker, next_step, td_env, owner, remark):
+def test_api_main(url, method, params):
     test_case_id = os.environ.get('test_case_id')
     # test_case_name = os.environ.get('test_case_name')
-    test_case_set_up = os.environ.get('test_case_set_up')
-    # test_case_params = os.environ.get('test_case_params')
-    # test_case_checkers = os.environ.get('test_case_checkers')
-    # test_case_next_step = os.environ.get('test_case_next_step')
-    # test_case_project = os.environ.get('test_case_project')
-    # test_case_version = os.environ.get('test_case_version')
-    # test_case_owner = os.environ.get('test_case_owner')
-    # test_case_remark = os.environ.get('test_case_remark')
-    # test_case_set_up_dict = json.loads(test_case_set_up)
-    test_case_set_up_dict = json.loads(test_case_set_up)
     get_logger().info("test_case_id为:%s", test_case_id)
-    url = test_case_set_up_dict["config"]["url"]
     get_logger().info("url为:%s", url)
+    get_logger().info("method为:%s", method)
+    get_logger().info("params为:%s", params)
+    get_logger().info("params type为:%s", type(json.loads(params)))
+    ret = None
+    if method == "post":
+        ret = requests.post(url, json=json.loads(params))
+    get_logger().info("ret为:%s", json.loads(ret.text))
+    assert ret

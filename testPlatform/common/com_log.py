@@ -3,11 +3,11 @@
 @LastEditors: joker.zhang
 @Description: For Automation
 @Date: 2019-03-10 21:52:18
-@LastEditTime: 2020-07-17 19:05:20
+@LastEditTime: 2020-07-20 17:07:33
 '''
 import os
 import logging
-from common.utils import get_now_time, get_folder_path
+from common.com_utils import get_now_time, get_folder_path
 
 
 def get_logger():
