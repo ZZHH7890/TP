@@ -2,7 +2,7 @@
 @Author: joker.zhang
 @Date: 2020-06-23 10:50:40
 @LastEditors: joker.zhang
-@LastEditTime: 2020-07-20 19:46:02
+@LastEditTime: 2020-07-20 23:29:12
 @Description: For Automation
 '''
 
@@ -21,9 +21,9 @@ from .models import TestCaseInfo
 def execute_all_action(request):
     if request.method == "POST":
         test_case_pk = request.POST.getlist('test_case_ids')
-    get_logger().info("需要执行的用例为:%s", test_case_pk)
-
-    os.environ.setdefault('test_case_id', test_case_pk)
+    # 数组设置不了环境变量，转换为字符串
+    test_case_pks = ','.join(test_case_pk)
+    os.environ.setdefault('test_case_id', test_case_pks)
     pytest.main(OperateTestRunner.get_pytest_cmd())
     return render(request, 'tpTest/add_test_case.html')
 
