@@ -2,7 +2,7 @@
 @Author: joker.zhang
 @Date: 2020-06-23 10:50:40
 @LastEditors: joker.zhang
-@LastEditTime: 2020-07-20 23:29:12
+@LastEditTime: 2020-07-21 08:54:11
 @Description: For Automation
 '''
 
@@ -23,7 +23,8 @@ def execute_all_action(request):
         test_case_pk = request.POST.getlist('test_case_ids')
     # 数组设置不了环境变量，转换为字符串
     test_case_pks = ','.join(test_case_pk)
-    os.environ.setdefault('test_case_id', test_case_pks)
+    #os.environ.setdefault('test_case_id', test_case_pks)
+    os.environ['test_case_id'] = test_case_pks
     pytest.main(OperateTestRunner.get_pytest_cmd())
     return render(request, 'tpTest/add_test_case.html')
 
@@ -33,7 +34,8 @@ def execute_action(request):
         test_case_pk = request.POST["test_case_id"]
         #test_case = TestCaseInfo.objects.get(id=test_case_pk)
 
-    os.environ.setdefault('test_case_id', test_case_pk)
+    #os.environ.setdefault('test_case_id', test_case_pk)
+    os.environ['test_case_id'] = test_case_pk
     get_logger().info("pytest cmd:%s", OperateTestRunner.get_pytest_cmd())
     pytest.main(OperateTestRunner.get_pytest_cmd())
 

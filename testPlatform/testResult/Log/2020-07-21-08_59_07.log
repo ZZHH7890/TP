@@ -1,0 +1,148 @@
+2020-07-21 08:59:07,561 INFO 需要执行的用例为:['2', '10', '11'] <class 'list'> conftest.py[line:35] get_test_data 
+2020-07-21 08:59:07,565 INFO 测试数据为:[('https://freight.17track.net/inquiryquoteapi/call', 'post', '{\r\n "version": "111",\r\n "method": "SearchInquiryInfoList",\r\n "param": {\r\n  "n": 1,\r\n  "s": 10,\r\n  "pc": "99999999",\r\n  "dc": "",\r\n  "kw": "",\r\n  "ot": 0\r\n }\r\n}'), ('https://freight.17track.net/inquiryquoteapi/call', 'post', '{\r\n "version": "2222",\r\n "method": "SearchInquiryInfoList",\r\n "param": {\r\n  "n": 1,\r\n  "s": 10,\r\n  "pc": "99999999",\r\n  "dc": "",\r\n  "kw": "",\r\n  "ot": 0\r\n }\r\n}'), ('https://freight.17track.net/inquiryquoteapi/call', 'post', '{\r\n "version": "33333",\r\n "method": "SearchInquiryInfoList",\r\n "param": {\r\n  "n": 1,\r\n  "s": 10,\r\n  "pc": "99999999",\r\n  "dc": "",\r\n  "kw": "",\r\n  "ot": 0\r\n }\r\n}')] conftest.py[line:48] get_test_data 
+2020-07-21 08:59:07,572 INFO ================================================================================ test_api.py[line:21] test_api_main 
+2020-07-21 08:59:07,572 INFO url为:https://freight.17track.net/inquiryquoteapi/call test_api.py[line:22] test_api_main 
+2020-07-21 08:59:07,572 INFO method为:post test_api.py[line:23] test_api_main 
+2020-07-21 08:59:07,572 INFO params为:{
+ "version": "111",
+ "method": "SearchInquiryInfoList",
+ "param": {
+  "n": 1,
+  "s": 10,
+  "pc": "99999999",
+  "dc": "",
+  "kw": "",
+  "ot": 0
+ }
+} test_api.py[line:24] test_api_main 
+2020-07-21 08:59:07,871 INFO ret为:{'Code': -9} test_api.py[line:28] test_api_main 
+2020-07-21 08:59:07,874 INFO ================================================================================ test_api.py[line:21] test_api_main 
+2020-07-21 08:59:07,874 INFO url为:https://freight.17track.net/inquiryquoteapi/call test_api.py[line:22] test_api_main 
+2020-07-21 08:59:07,874 INFO method为:post test_api.py[line:23] test_api_main 
+2020-07-21 08:59:07,874 INFO params为:{
+ "version": "2222",
+ "method": "SearchInquiryInfoList",
+ "param": {
+  "n": 1,
+  "s": 10,
+  "pc": "99999999",
+  "dc": "",
+  "kw": "",
+  "ot": 0
+ }
+} test_api.py[line:24] test_api_main 
+2020-07-21 08:59:07,902 INFO ret为:{'Code': -9} test_api.py[line:28] test_api_main 
+2020-07-21 08:59:07,905 INFO ================================================================================ test_api.py[line:21] test_api_main 
+2020-07-21 08:59:07,905 INFO url为:https://freight.17track.net/inquiryquoteapi/call test_api.py[line:22] test_api_main 
+2020-07-21 08:59:07,905 INFO method为:post test_api.py[line:23] test_api_main 
+2020-07-21 08:59:07,905 INFO params为:{
+ "version": "33333",
+ "method": "SearchInquiryInfoList",
+ "param": {
+  "n": 1,
+  "s": 10,
+  "pc": "99999999",
+  "dc": "",
+  "kw": "",
+  "ot": 0
+ }
+} test_api.py[line:24] test_api_main 
+2020-07-21 08:59:07,936 INFO ret为:{'Code': -9} test_api.py[line:28] test_api_main 
+2020-07-21 08:59:34,016 INFO pytest cmd:['C:\\Users\\17TRACK\\eclipse-workspace\\TP\\testPlatform\\testCases\\API', '-q', '--html=C:\\Users\\17TRACK\\eclipse-workspace\\TP\\testPlatform\\\\testResult\\Report\\Report.html'] views.py[line:39] execute_action 
+2020-07-21 08:59:34,131 INFO ================================================================================ test_api.py[line:21] test_api_main 
+2020-07-21 08:59:34,131 INFO url为:https://freight.17track.net/inquiryquoteapi/call test_api.py[line:22] test_api_main 
+2020-07-21 08:59:34,132 INFO method为:post test_api.py[line:23] test_api_main 
+2020-07-21 08:59:34,132 INFO params为:{
+ "version": "111",
+ "method": "SearchInquiryInfoList",
+ "param": {
+  "n": 1,
+  "s": 10,
+  "pc": "99999999",
+  "dc": "",
+  "kw": "",
+  "ot": 0
+ }
+} test_api.py[line:24] test_api_main 
+2020-07-21 08:59:34,164 INFO ret为:{'Code': -9} test_api.py[line:28] test_api_main 
+2020-07-21 08:59:34,167 INFO ================================================================================ test_api.py[line:21] test_api_main 
+2020-07-21 08:59:34,167 INFO url为:https://freight.17track.net/inquiryquoteapi/call test_api.py[line:22] test_api_main 
+2020-07-21 08:59:34,167 INFO method为:post test_api.py[line:23] test_api_main 
+2020-07-21 08:59:34,168 INFO params为:{
+ "version": "2222",
+ "method": "SearchInquiryInfoList",
+ "param": {
+  "n": 1,
+  "s": 10,
+  "pc": "99999999",
+  "dc": "",
+  "kw": "",
+  "ot": 0
+ }
+} test_api.py[line:24] test_api_main 
+2020-07-21 08:59:34,197 INFO ret为:{'Code': -9} test_api.py[line:28] test_api_main 
+2020-07-21 08:59:34,199 INFO ================================================================================ test_api.py[line:21] test_api_main 
+2020-07-21 08:59:34,199 INFO url为:https://freight.17track.net/inquiryquoteapi/call test_api.py[line:22] test_api_main 
+2020-07-21 08:59:34,200 INFO method为:post test_api.py[line:23] test_api_main 
+2020-07-21 08:59:34,200 INFO params为:{
+ "version": "33333",
+ "method": "SearchInquiryInfoList",
+ "param": {
+  "n": 1,
+  "s": 10,
+  "pc": "99999999",
+  "dc": "",
+  "kw": "",
+  "ot": 0
+ }
+} test_api.py[line:24] test_api_main 
+2020-07-21 08:59:34,231 INFO ret为:{'Code': -9} test_api.py[line:28] test_api_main 
+2020-07-21 09:01:51,297 INFO pytest cmd:['C:\\Users\\17TRACK\\eclipse-workspace\\TP\\testPlatform\\testCases\\API', '-q', '--html=C:\\Users\\17TRACK\\eclipse-workspace\\TP\\testPlatform\\\\testResult\\Report\\Report.html'] views.py[line:39] execute_action 
+2020-07-21 09:01:51,383 INFO ================================================================================ test_api.py[line:21] test_api_main 
+2020-07-21 09:01:51,383 INFO url为:https://freight.17track.net/inquiryquoteapi/call test_api.py[line:22] test_api_main 
+2020-07-21 09:01:51,383 INFO method为:post test_api.py[line:23] test_api_main 
+2020-07-21 09:01:51,383 INFO params为:{
+ "version": "111",
+ "method": "SearchInquiryInfoList",
+ "param": {
+  "n": 1,
+  "s": 10,
+  "pc": "99999999",
+  "dc": "",
+  "kw": "",
+  "ot": 0
+ }
+} test_api.py[line:24] test_api_main 
+2020-07-21 09:01:51,413 INFO ret为:{'Code': -9} test_api.py[line:28] test_api_main 
+2020-07-21 09:01:51,415 INFO ================================================================================ test_api.py[line:21] test_api_main 
+2020-07-21 09:01:51,415 INFO url为:https://freight.17track.net/inquiryquoteapi/call test_api.py[line:22] test_api_main 
+2020-07-21 09:01:51,415 INFO method为:post test_api.py[line:23] test_api_main 
+2020-07-21 09:01:51,415 INFO params为:{
+ "version": "2222",
+ "method": "SearchInquiryInfoList",
+ "param": {
+  "n": 1,
+  "s": 10,
+  "pc": "99999999",
+  "dc": "",
+  "kw": "",
+  "ot": 0
+ }
+} test_api.py[line:24] test_api_main 
+2020-07-21 09:01:51,445 INFO ret为:{'Code': -9} test_api.py[line:28] test_api_main 
+2020-07-21 09:01:51,447 INFO ================================================================================ test_api.py[line:21] test_api_main 
+2020-07-21 09:01:51,447 INFO url为:https://freight.17track.net/inquiryquoteapi/call test_api.py[line:22] test_api_main 
+2020-07-21 09:01:51,447 INFO method为:post test_api.py[line:23] test_api_main 
+2020-07-21 09:01:51,447 INFO params为:{
+ "version": "33333",
+ "method": "SearchInquiryInfoList",
+ "param": {
+  "n": 1,
+  "s": 10,
+  "pc": "99999999",
+  "dc": "",
+  "kw": "",
+  "ot": 0
+ }
+} test_api.py[line:24] test_api_main 
+2020-07-21 09:01:51,479 INFO ret为:{'Code': -9} test_api.py[line:28] test_api_main 

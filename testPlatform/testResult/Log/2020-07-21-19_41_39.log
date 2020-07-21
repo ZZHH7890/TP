@@ -1,0 +1,1 @@
+2020-07-21 19:41:39,461 INFO pytest cmd:['C:\\Users\\17TRACK\\eclipse-workspace\\TP\\testPlatform\\testCases\\API', '-q', '--html=C:\\Users\\17TRACK\\eclipse-workspace\\TP\\testPlatform\\\\testResult\\Report\\Report.html'] views.py[line:39] execute_action 

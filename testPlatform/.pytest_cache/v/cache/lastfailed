@@ -1,1 +1,3 @@
-{}
+{
+  "testCases/API/test_api.py::test_api_main[https://freight.17track.net/inquiryquoteapi/call-post-{\\r\\n \"version\": \"111\",\\r\\n \"method\": \"SearchInquiryInfoList\",\\r\\n \"param\": {\\r\\n  \"n\": 1,\\r\\n  \"s\": 10,\\r\\n  \"pc\": \"99999999\",\\r\\n  \"dc\": \"\",\\r\\n  \"kw\": \"\",\\r\\n  \"ot\": 0\\r\\n }\\r\\n}]": true
+}

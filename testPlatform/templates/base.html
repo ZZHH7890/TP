@@ -2,7 +2,7 @@
  * @Author: joker.zhang
  * @Date: 2020-07-02 15:26:37
  * @LastEditors: joker.zhang
- * @LastEditTime: 2020-07-13 23:28:47
+ * @LastEditTime: 2020-07-21 09:10:54
  * @Description: For Automation
 -->
 {% load staticfiles %}
@@ -22,7 +22,7 @@
     {% block header_extends %}{% endblock %}
 </head>
 
-<body>
+<body class="header-fixTop">
         <nav class="navbar navbar-inverse" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -30,8 +30,9 @@
                 </div>
                 <div>
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="{% url 'test_case_list' %}">列表</a></li>
-                        <li><a href="{% url 'test_case_list' %}">报告</a></li>
+                        <li class="active"><a href="{% url 'test_case_list' %}">测试用例</a></li>
+                        <li class="active"><a href="#">测试计划</a></li>
+                        <li><a href="{% url 'home' %}">报告</a></li>
                 </div>
             </div>
         </nav>
